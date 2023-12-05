@@ -165,30 +165,25 @@ public class inputHelper {
     }
 
     public static void prettyHeader(String msg) {
-        String str = msg;
+        String x = " ";
+        int y = msg.length();
+        int z = (60-y)/2 -2 ;
         for (int i = 0; i < 60; i++) {
             System.out.print("*");
         }
         System.out.println();
-        int length = str.length();
-
-        System.out.print("***");
-
-        int center1 = 54 - (length*2);
-        int center2 = 27-length;
-        for (int j = 0; j <= center1; j++) {
-            System.out.print(" ");
+        for (int i = 0; i < 60; i++) {
+            if (z == i) {
+                System.out.print(msg);
+            } else if (i < 3 || i > 56) {
+                System.out.print("*");
+            } else if (i < 56 - (msg.length()-2)) {
+                System.out.print(x);
+            }
         }
-        System.out.print(str);
-        for (int j = 0; j <= center1; j++) {
-            System.out.print(" ");
-        }
-        System.out.println("***");
-
+        System.out.println();
         for (int i = 0; i < 60; i++) {
             System.out.print("*");
         }
-
-
     }
 }
